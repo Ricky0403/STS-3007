@@ -50,7 +50,7 @@ public class LexicographicPalindrome {
             String temp = "";
             if(freq[i]!=0){
                 char ch = (char)(i+'a');
-                for(int j = 0;j<=freq[i]/2-1;j++){
+                for(int j = 1;j<=freq[i]/2;j++){
                     temp= temp+ch;
                 }
             }
