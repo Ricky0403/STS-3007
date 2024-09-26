@@ -5,7 +5,7 @@ public class SwapNibble {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number");
         int num = sc.nextInt();
-        int swapnum = ((num & 0x0F) << 4 | (num & 0x0F) >>4 );
+        int swapnum = ((num & 0x0F) << 4 | (num & 0xF0) >>4 );
         System.out.println("Before swapping: "+num);
         System.out.println("After the swap: " +swapnum);
     }
