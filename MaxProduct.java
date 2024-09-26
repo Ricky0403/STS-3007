@@ -10,9 +10,8 @@ public class MaxProduct {
         int result = maxSoFar;
         for(int i = 1;i<nums.size();i++){
             int curr = nums.get(i);
-            int tempMax = Math.max(curr, Math.max(maxSoFar*curr,minSoFar*curr));
+            maxSoFar = Math.max(curr, Math.max(maxSoFar*curr,minSoFar*curr));
             minSoFar= Math.min(curr,Math.min(maxSoFar*curr,minSoFar*curr));
-            maxSoFar = tempMax;
             result = Math.max(maxSoFar, result);
         }
         return result;
