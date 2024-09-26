@@ -1,16 +1,21 @@
 import java.util.*;
 public class KaratsubaAlgo {
     int ans(int x, int y){
+        if(x<10 || y<10){
+            return x*y;
+        }
         int n = Math.max(len(x),len(y));
-        int a = (int)(x/Math.pow(10,n/2));
-        int b = (int)(x%Math.pow(10,n/2));
-        int c = (int)(y/Math.pow(10,n/2));
-        int d = (int)(y%Math.pow(10,n/2));
+        int halfN = n/2;
+        int pow10 = (int)Math.pow(10,halfN);
+        int a = x/pow10;
+        int b = x%pow10;
+        int c = y/pow10;
+        int d = y%pow10;
         int ac = ans(a,c);
         int bd = ans(b,d);
         int abcd = ans(a+b,c+d);
         int diff = abcd-bd-ac;
-        int xy = (int)(ac*Math.pow(10,n)+diff*Math.pow(10,n/2)+bd);
+        int xy = ac*(int)Math.pow(10,2*halfN)+diff*pow10+bd;
         return xy;
     }
     int len(int x){

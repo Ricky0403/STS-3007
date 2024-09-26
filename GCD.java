@@ -20,7 +20,6 @@ public class GCD {
 
         x = y1 - (b / a) * x1;
         y = x1;
-
         return gcd;
     }
     public static void main(String[] args) {
